@@ -3,7 +3,6 @@ package enums;
 public class MainEnum {
 
     public static void main(String[] args) {
-
         Subscription subscription = new Subscription();
 
         subscription.state = Subscription.SUBSCRIPTION_STATE_SUSPENDED;
