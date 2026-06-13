@@ -4,8 +4,21 @@ public class MainEnum {
 
     public static void main(String[] args) {
         Subscription subscription = new Subscription();
+        subscription.state = Subscription.State.SUSPENDED;
 
-        subscription.state = Subscription.SUBSCRIPTION_STATE_SUSPENDED;
+        System.out.println(Subscription.State.valueOf("ACTIVE"));
+        System.out.println(Subscription.State.NONE.toString());
+        System.out.println(Subscription.State.SUSPENDED.ordinal());
+        System.out.println(Subscription.State.values()[2]);
+
+        switch (subscription.state) {
+            case NONE:
+                break;
+            case ACTIVE:
+                break;
+            case SUSPENDED:
+                break;
+        }
     }
 }
 
@@ -17,6 +30,10 @@ class Subscription {
 
     String name;
     String description;
-    int state;
+    State state;
+
+    enum State {
+        NONE, ACTIVE, SUSPENDED;
+    }
 
 }
